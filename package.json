@@ -1,0 +1,25 @@
+{
+  "name": "royal-kingdom-a-city-building-adventure",
+  "version": "1.0.0",
+  "description": "A city-building adventure game",
+  "main": "game.mjs",
+  "scripts": {
+    "test": "jest",
+    "build": "webpack"
+  },
+  "keywords": [
+    "city-building",
+    "game",
+    "adventure"
+  ],
+  "author": "Abrar Ahmed",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^27.0.0",
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "babel-jest": "^27.0.0",
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.0"
+  }
+}

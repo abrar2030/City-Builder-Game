@@ -1,0 +1,63 @@
+body {
+    background-color: #82d3f3; 
+    color: #fff; 
+    font-family: 'Arial', sans-serif; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#Intro {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Silkscreen', sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    color: #FFD700; 
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+
+
+button {
+    height: 40px;
+    width: 150px;
+    background-color: #e29e4a; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 10px 0; 
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3; 
+    transform: scale(1.05); 
+}
+
+div#NewGame, div#LoadGame, div#Exit {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+div#NewGame {
+    top: 200px;
+}
+
+div#LoadGame {
+    top: 250px;
+}
+
+div#Exit {
+    top: 300px;
+}

@@ -1,0 +1,246 @@
+/* Basic reset and overall styling */
+
+
+#gameOverDiv  {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers the div */
+  background-color: black;
+  color: red;
+  padding: 20px;
+  display: none; /* Initially hidden */
+}
+
+body {
+  font-family: 'Arial', sans-serif; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding-top: 20px; 
+  margin: 0;
+  background-image: url('images.jpg');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  height: 100vh; 
+  color: #ffffff;
+}
+
+table {
+  border-collapse: collapse;
+  width: 60%;
+  border: 3px solid #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  background-color: #e0e0e0;
+}
+
+td {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ddd;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 10px;
+  background-color: #f0f0f0;
+}
+
+tr:nth-child(odd) td {
+  background-color: #f9f9f9;
+}
+
+tr:nth-child(even) td {
+  background-color: #e9e9e9;
+}
+
+
+
+/* Top bar layout for stats */
+#top-bar {
+  color: blue;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 20px; /* Padding around the content */
+  box-sizing: border-box;
+}
+
+#stats-left, #stats-right {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+#stats-right {
+  text-align: right; /* Aligns the right stats to the right */
+}
+
+#infoDiv {
+  display: none;
+  position: fixed;
+  top: 150px;
+  left: 10px;
+  width: 150px; /* Adjust width as needed */
+  height: 15%; /* Adjust height as needed */
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px;
+  z-index: 100;
+}
+
+
+/* Style modifications for smaller, more discrete labels */
+p {
+  margin: 5px 0;
+  font-size: 16px; /* Smaller font size for less obtrusive display */
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Styling for the buttons and interactive elements */
+input[type="submit"], button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Enhanced responsiveness for mobile views */
+@media (max-width: 768px) {
+  #top-bar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #stats-left, #stats-right {
+    text-align: center;
+  }
+}
+
+
+/* Positioning the Shop button to the right top corner */
+#buttonContainer {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Styling for the shop items container */
+#shop_items {
+  display: none; /* Initially hidden */
+  position: absolute;
+  right: 10px; /* Align with the right edge of the Shop button */
+  top: 60px; /* Positioned right below the Shop button */
+  background-color: white;
+  border: 1px solid #2b2525;
+  padding: 3px; /* Reduced padding */
+  border-radius: 5px;
+}
+
+#shop_items .shop-item {
+  display: flex; /* Align items horizontally */
+  flex-direction: column; /* Stack image and text vertically */
+  align-items: center; /* Center-align items */
+  margin-bottom: 5px; /* Reduced space between items */
+}
+
+#shop_items img {
+  width: 40px; /* Smaller width */
+  height: auto; /* Maintain aspect ratio */
+  cursor: pointer; /* Cursor pointer to indicate clickability */
+}
+
+#shop_items p {
+  margin: 2px 0; /* Reduced margin around the text */
+  font-size: 12px; /* Smaller font size for the text */
+  color: #333; /* Text color */
+}
+
+
+#shop {
+  position: fixed; /* Or absolute, depending on the relative container */
+  top: 80px;       /* 10px from the top */
+  right: 50px;     /* 10px from the right */
+  width: 80px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+#shop:hover {
+  transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
+
+/* Position and style for displaying the time and date */
+#elapsed-time {
+  position: absolute;  /* Positioning it relative to the nearest positioned ancestor */
+  top: 30px;           /* Push it from the top of the screen */
+  left: 50%;           /* Center it horizontally */
+  transform: translateX(-50%); /* Shift it back by half its width to truly center it */
+  color: rgb(0, 0, 0);        /* Ensuring the text is visible on potentially darker backgrounds */
+  text-align: center;  /* Align text in the center of the div */
+  font-size: 16px;     /* Set font size */
+  z-index: 100;        /* Ensuring it's on top of other content */
+}
+
+#actual-time {
+  position: absolute;  /* Positioning it relative to the nearest positioned ancestor */
+  top: 10px;           /* Push it from the top of the screen */
+  left: 50%;           /* Center it horizontally */
+  transform: translateX(-50%); /* Shift it back by half its width to truly center it */
+  color: rgb(0, 0, 0);        /* Ensuring the text is visible on potentially darker backgrounds */
+  text-align: center;  /* Align text in the center of the div */
+  font-size: 16px;     /* Set font size */
+  z-index: 100;        /* Ensuring it's on top of other content */
+}
+
+/* Save Button Styling */
+button#Save {
+  position: fixed;   /* Fixed position */
+  bottom: 20px;      /* Positioned at the bottom of the viewport */
+  right: 20px;       /* Positioned on the right side */
+  background-color: #4CAF50; /* Green background color */
+  color: white;      /* White text */
+  border: none;      /* No border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Padding for better touch area */
+  font-size: 18px;   /* Large font size for readability */
+  cursor: pointer;   /* Pointer cursor on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for 3D effect */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transitions for interactive feedback */
+}
+
+button#Save:hover, button#Save:focus {
+  background-color: #367C39; /* Darker green on hover/focus */
+  transform: translateY(-2px); /* Slight raise to indicate button press */
+  outline: none; /* Removes outline to keep style clean */
+}
+
+button#Save:active {
+  background-color: #2E6531; /* Even darker green when active */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Deeper shadow to simulate pressing */
+  transform: translateY(0); /* Resets transform when clicked */
+}

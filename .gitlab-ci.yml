@@ -1,0 +1,43 @@
+# Define stages that run in order. 
+stages:
+  - build
+  - test
+  - deploy
+
+# Define global variables that can be used in all jobs.
+variables:
+  VARIABLE_NAME: "variable_value"
+
+# Define jobs that will be executed in the CI/CD pipeline.
+# Jobs are defined under the stages they belong to.
+# Each job runs in a separate instance of a GitLab Runner.
+# For more detailed configuration options, refer to GitLab CI/CD documentation.
+
+# Example build job
+build:
+  stage: build
+  script:
+    - echo "Building..."
+
+# Test job to run Jest tests
+test:
+  stage: test
+  image: node:14 # Use an official Node.js image
+  script:
+    - npm install
+    - npm test
+  artifacts:
+    when: always
+    reports:
+      junit: test-results/junit.xml
+    paths:
+      - test-results/
+
+# Example deploy job
+deploy:
+  stage: deploy
+  script:
+    - echo "Deploying..."
+  # Only run this job when changes are pushed to the master branch
+  only:
+    - master
